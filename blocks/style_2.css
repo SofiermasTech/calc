@@ -1,0 +1,94 @@
+.container-2 {
+   width: 50%;
+   height: 100vh;
+   font-family: Arial, Helvetica, sans-serif;
+   background-color: #fff;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.title-2 {
+   margin: 40px 0 10px;
+   color: #333;
+   font-size: 12px;
+   font-weight: 400;
+}
+
+.calc {
+   width: 300px;
+   height: 540px;
+   /* border: 1px solid #fff; */
+   padding: 20px;
+   box-sizing: content-box;
+   margin: 0 auto;
+   border-radius: 20px;
+   background-color: black;
+   box-shadow: 4px 4px 24px #4f4f4f;
+}
+
+.screen {
+   width: 100%;
+   height: 160px;
+   padding: 10px;
+   box-sizing: border-box;
+   display: grid;
+   justify-items: end;
+   align-items: end;
+}
+
+.screen__result {
+   font-size: 4rem;
+   color: #fff;
+   margin: 0;
+}
+
+.buttons {
+   display: grid;
+   grid-template-areas:
+      "ac plus-minus percent division-2"
+      "seven eight nine myltiply-2"
+      "four five six minus-2"
+      "one two three plus-2"
+      "zero zero dot qual-2";
+   gap: 10px;
+   justify-items: center;
+   margin-top: 26px;
+}
+
+.buttons__circle {
+   background-color: #333;
+   color: #fff;
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+   text-align: center;
+   line-height: 60px;
+   font-size: 20px;
+   font-weight: 500;
+   cursor: pointer;
+   user-select: none;
+}
+
+.buttons__circle:hover {
+   filter: brightness(130%);
+}
+
+.buttons__circle:active {
+   filter: brightness(90%);
+}
+
+#zero {
+   grid-area: zero;
+   width: 100%;
+   border-radius: 38px;
+}
+
+.btn-orange {
+   background-color: #ff9501;
+}
+
+.btn-grey {
+   background-color: #a6a6a6;
+   color: #333;
+}
