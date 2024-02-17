@@ -1,4 +1,4 @@
-import '../pages/index.css';
+import './index.css';
 
 // import '../scripts/script_1.js';
 // import '../scripts/script_2.js';
