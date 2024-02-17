@@ -1,11 +1,12 @@
 .container-2 {
-   width: 50%;
+   width: 45%;
    height: 100vh;
    font-family: Arial, Helvetica, sans-serif;
    background-color: #fff;
    display: flex;
    flex-direction: column;
    align-items: center;
+   padding: 20px;
 }
 
 .title-2 {
@@ -35,12 +36,19 @@
    display: grid;
    justify-items: end;
    align-items: end;
+   /* overflow: hidden;
+   text-overflow: ellipsis; */
 }
 
 .screen__result {
+   width: 100%;
    font-size: 4rem;
    color: #fff;
    margin: 0;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   text-align: end;
 }
 
 .buttons {
@@ -91,4 +99,12 @@
 .btn-grey {
    background-color: #a6a6a6;
    color: #333;
+}
+
+@media screen and (max-width: 1024px) {
+   .container-2 {
+      width: 100%;
+      min-width: 420px;
+      height: 660px;
+   }
 }

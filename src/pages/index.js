@@ -1,8 +1,5 @@
 import './index.css';
 
-// import '../scripts/script_1.js';
-// import '../scripts/script_2.js';
-
 // первый
 const number1 = document.getElementById('input1');
 const number2 = document.getElementById('input2');
@@ -33,9 +30,9 @@ btnDivide.onclick = function clickDivide() {
 
 function colorResult(sum) {
    if (sum < 0) {
-      result.style.color = 'red';
+      result.style.color = '#55BBAC';
    } else {
-      result.style.color = 'green';
+      result.style.color = '#AD72A0';
    }
    result.textContent = sum;
 }
@@ -85,7 +82,7 @@ let sign = ''; // operation
 let finish = false; // result
 
 const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ','];
-const symbol = ['-', '+', '*', '/'];
+const symbol = ['-', '+', 'x', '÷', '%', '√'];
 
 // экран с результатом
 const screen = document.querySelector('.screen__result');
@@ -109,9 +106,10 @@ document.querySelector('.buttons').onclick = (evt) => {
       return;
    };
 
+
    screen.textContent = 0;
    // получение нажатой кнопки
-   const key = evt.target.textContent;
+   let key = evt.target.textContent;
 
    // нажата клавиша из numbers
    if (numbers.includes(key)) {
@@ -132,6 +130,10 @@ document.querySelector('.buttons').onclick = (evt) => {
 
    // нажата клавиша из symbol
    if (symbol.includes(key)) {
+      if (key === 'x') {
+         key = '*';
+         sign = key;
+      }
       if (sign !== '') {
          sign = key;
          screen.textContent = sign;
@@ -157,7 +159,7 @@ document.querySelector('.buttons').onclick = (evt) => {
          case '*':
             a = a * b;
             break;
-         case '/':
+         case '÷':
             if (b === '0') {
                screen.textContent = 'Ошибка';
                a = '';
@@ -167,6 +169,13 @@ document.querySelector('.buttons').onclick = (evt) => {
             }
             a = a / b;
             break;
+         case '%':
+            a = a / 100;
+            break;
+         case '√':
+            a = Math.sqrt(a);
+            break;
+
       }
       finish = true;
       screen.textContent = a;
