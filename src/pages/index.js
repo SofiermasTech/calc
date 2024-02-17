@@ -26,7 +26,6 @@ btnMultiply.onclick = function clickMultiply() {
 btnDivide.onclick = function clickDivide() {
    action = '/'
 }
-//console.log(submitNumber());
 
 function colorResult(sum) {
    if (sum < 0) {
@@ -175,11 +174,10 @@ document.querySelector('.buttons').onclick = (evt) => {
          case '√':
             a = Math.sqrt(a);
             break;
-
       }
+
       finish = true;
       screen.textContent = a;
       console.log(a, b, sign);
-
    }
 }

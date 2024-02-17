@@ -19,7 +19,6 @@
 .calc {
    width: 300px;
    height: 540px;
-   /* border: 1px solid #fff; */
    padding: 20px;
    box-sizing: content-box;
    margin: 0 auto;
@@ -36,8 +35,6 @@
    display: grid;
    justify-items: end;
    align-items: end;
-   /* overflow: hidden;
-   text-overflow: ellipsis; */
 }
 
 .screen__result {
@@ -101,10 +98,14 @@
    color: #333;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
    .container-2 {
       width: 100%;
       min-width: 420px;
       height: 660px;
+   }
+
+   .title-2 {
+      margin: 20px 0 10px;
    }
 }
