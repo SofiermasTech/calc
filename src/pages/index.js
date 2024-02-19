@@ -80,7 +80,7 @@ let b = ''; // second number
 let sign = ''; // operation
 let finish = false; // result
 
-const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ','];
+const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
 const symbol = ['-', '+', 'x', '÷', '%', '√'];
 
 // экран с результатом
@@ -106,24 +106,44 @@ document.querySelector('.buttons').onclick = (evt) => {
    };
 
 
+   //if (a.classList.contains('ac') )
+   //a.replace('0', '')
+   // a.shift() const newMonths = months.toSpliced(0, 2)
+
    screen.textContent = 0;
    // получение нажатой кнопки
    let key = evt.target.textContent;
 
    // нажата клавиша из numbers
    if (numbers.includes(key)) {
+
       if (b === '' && sign === '') {
-         a += key;
-         screen.textContent = a;
+         if (a === '' && key === '0') {
+            a = '';
+            screen.textContent = 0;
+         } else {
+            a += key;
+            screen.textContent = a;
+         }
+         // else if (a !== '' && (key === '0' || key !== '0')) {
+         //   a += key;
+          //  screen.textContent = a;
+        // }
       } else if (a !== '' && b !== '' && finish) {
          b = key;
          finish = false;
          screen.textContent = b;
       } else {
-         b += key;
-         screen.textContent = b;
+         if (key !== '0') {
+            b += key;
+            screen.textContent = b;
+         } else if (b !== '' && (key === '0' || key !== '0')) {
+            b += key;
+            screen.textContent = b;
+         }
       }
       console.log(a, b, sign);
+      console.log(typeof a);
       return;
    }
 
